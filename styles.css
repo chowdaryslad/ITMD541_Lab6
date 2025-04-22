@@ -1,0 +1,225 @@
+/* ======= THEME VARIABLES ======= */
+:root {
+  --bg: #f5f5f5;
+  --text: #222;
+  --card-bg: rgba(255, 255, 255, 0.8);
+  --shadow: rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode {
+  --bg: #1e1e2f;
+  --text: #f5f5f5;
+  --card-bg: rgba(30, 30, 47, 0.8);
+  --shadow: rgba(255, 255, 255, 0.1);
+}
+
+/* ======= RESET AND GLOBAL STYLES ======= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+}
+
+/* ======= HEADER ======= */
+header {
+  text-align: center;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+header h1 {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+header p {
+  font-size: 0.95rem;
+  font-weight: 300;
+}
+
+/* ======= THEME TOGGLE ======= */
+.theme-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.theme-toggle .icon {
+  font-size: 1.2rem;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #f39c12;
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+/* ======= CONTROLS SECTION ======= */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+select, button {
+  padding: 0.6rem 1rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  border: none;
+  background: white;
+  color: #333;
+  box-shadow: 0 2px 8px var(--shadow);
+  transition: background 0.3s ease;
+}
+
+button {
+  background-color: #f39c12;
+  color: white;
+}
+
+button:hover {
+  background-color: #e67e22;
+}
+
+/* ======= CARD STYLING ======= */
+.card {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 20px;
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 20px var(--shadow);
+  transition: background 0.3s ease;
+}
+
+.card h2 {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 0.5rem;
+}
+
+/* ======= DATA GRID ======= */
+.data-grid {
+  display: grid;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.data-grid p::before {
+  display: inline-block;
+  width: 20px;
+  margin-right: 8px;
+}
+
+/* Weather-style icons */
+.data-grid p:nth-child(1)::before { content: "🌅"; }
+.data-grid p:nth-child(2)::before { content: "🌇"; }
+.data-grid p:nth-child(3)::before { content: "🌄"; }
+.data-grid p:nth-child(4)::before { content: "🌆"; }
+.data-grid p:nth-child(5)::before { content: "🕒"; }
+.data-grid p:nth-child(6)::before { content: "☀️"; }
+.data-grid p:nth-child(7)::before { content: "🕓"; }
+
+/* ======= ERROR MESSAGE ======= */
+.error {
+  text-align: center;
+  color: red;
+  background: rgba(255, 0, 0, 0.1);
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.error.hidden {
+  display: none;
+}
+
+/* ======= FOOTER ======= */
+footer {
+  text-align: center;
+  font-size: 0.85rem;
+  margin-top: 2rem;
+  opacity: 0.8;
+}
+
+footer a {
+  color: #f39c12;
+  text-decoration: none;
+}
+
+/* ======= RESPONSIVE ======= */
+@media screen and (max-width: 600px) {
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  select, button {
+    width: 100%;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+}

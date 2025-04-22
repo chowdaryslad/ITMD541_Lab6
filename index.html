@@ -1,0 +1,85 @@
+<!--Satya Diresh Kumar Yaganti-->
+<!--ITMD 541-01 Graduate Student-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta tags for responsive layout and encoding -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Title and styles -->
+  <title>ITMD541_Lab6_SatyaDiresh</title>
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Google Fonts and Font Awesome Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container">
+    <!-- Header Section -->
+    <header>
+      <h1><i class="fas fa-sun"></i> Sunrise & Sunset</h1>
+      <p>Live astronomical times, inspired by Apple Weather</p>
+
+      <!-- Dark/Light Mode Toggle Switch -->
+      <div class="theme-toggle">
+        <span class="icon">🌞</span>
+        <label class="switch">
+          <input type="checkbox" id="toggleMode">
+          <span class="slider"></span>
+        </label>
+        <span class="icon">🌙</span>
+      </div>
+    </header>
+
+    <!-- Location Selection & Geolocation -->
+    <section class="controls">
+      <select id="locationSelect">
+        <!-- Predefined list of 10+ locations -->
+        <option value="">Select Location</option>
+        <option value="41.8781,-87.6298">Chicago, IL</option>
+        <option value="34.0522,-118.2437">Los Angeles, CA</option>
+        <option value="40.7128,-74.0060">New York, NY</option>
+        <option value="29.7604,-95.3698">Houston, TX</option>
+        <option value="33.4484,-112.0740">Phoenix, AZ</option>
+        <option value="39.7392,-104.9903">Denver, CO</option>
+        <option value="47.6062,-122.3321">Seattle, WA</option>
+        <option value="25.7617,-80.1918">Miami, FL</option>
+        <option value="41.2565,-95.9345">Omaha, NE</option>
+        <option value="35.2271,-80.8431">Charlotte, NC</option>
+      </select>
+
+      <!-- Geolocation Button -->
+      <button id="useMyLocation"><i class="fas fa-location-arrow"></i> Use My Location</button>
+    </section>
+
+    <!-- Dashboard Cards -->
+    <section class="results" id="results">
+      <!-- Today’s Data -->
+      <div class="card" id="today">
+        <h2>Today</h2>
+        <div class="data-grid"></div>
+      </div>
+
+      <!-- Tomorrow’s Data -->
+      <div class="card" id="tomorrow">
+        <h2>Tomorrow</h2>
+        <div class="data-grid"></div>
+      </div>
+    </section>
+
+    <!-- Error Display -->
+    <section id="error" class="error hidden"></section>
+
+    <!-- Footer with API credit -->
+    <footer>
+      <p>Powered by <a href="https://sunrisesunset.io/api/" target="_blank">sunrisesunset.io API</a></p>
+    </footer>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
